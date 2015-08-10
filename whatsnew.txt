@@ -1,0 +1,267 @@
+-------------------
+Version 2010.11.19
+-------------------
+New Games: TeddyBoy Blues, Terra Force, The Deep, Battle Chopper, Lady Frog, Space Fury, X Multiply, Vamf x1/2, Van-Van Car, Vanguard, Varia Metal, Varth, Vastar, Venture, Victory Road, Wanted, Warp & Warp, Wiggie Waggie (dna disturber)
+
+Bug Fixes:
+teddybb was missing clone teddybbo.
+terraf was missing clones terrafa, and terrafb.
+thedeep was missing clone rundeep.
+bchopper was missing a byte for the last name entry.
+spacfury was missing clones spacfurya, and spacfuryb as well as legacy clones spacfurb, and spacfurc.
+xmultipl was missing clone xmultiplm72.
+vamphalf was missing clone vamphalfk, as well as legacy clone vamphafk.
+vanvan was missing legacy clone vanvans.
+vanguard was missing clones vanguardc, vanguardj, and legacy clones vangrdce and vanguarj were not marked as legacy clones.
+gyruss was missing clone venus which was a parent.
+arknoid2 had changed memory maps after 0.130u3 (probably), entry changed to use a different section of memory that also works in legacy versions of MAME.
+victroad was missing legacy clone dogosokj.
+viofight was missing clones viofightj, viofightu as well as legacy clones viofighj and viofighu.
+wanted was missing bytes for scores and names.
+warpwarp was missing clones warpwarpr, warpwarp2 as well as legacy clones warpwarr and warpwar2.
+wiggie was missing clone superbar
+
+-------------------
+Version 2010.11.4
+-------------------
+New Games: Battle Cross, Battlantis, Bermuda Triangle, Calipso, Congo Bongo, Dock Man, Acrobatic Dog-Fight, Funky Fish, Freeze, Funky Bee, Future Spy, Galactic Warriors, Jack the Giantkiller, Joinem, Kick, Lover Boy, Mega Blast, Meta Fox, Metal Clash, Mikie, Minefield, Minky Monkey, Mole Attack, Monster Bash, Moonwar, Mister Viking, Qix, Roc'n Rope, Rompers, Satan of Saturn, Saturn, Super Mouse, Tazz-Mania, Traverse USA / Zippy Race, Valtric, Wall Crash, World Wars, Xain'd Sleena, Zoar, Zodiack, Zombie Raid, Zzyzzyxx (dna disturber)
+
+Bug Fixes: 
+explorer had a bug in the XML where it was determining rank using non-reversed bytes.
+exprraid modified in hiscore.dat to add new clones.
+exprrada renamed to exprraida.
+extrmatn modified in hiscore.dat to use non-legacy named clones.
+frogger modified in hiscore.dat to use non-legacy named clones, and merged clones to parent.
+galaga modified in hiscore.dat with documentation and merged clone gatsbee.
+gijoe modified in hiscore.dat to merge gijoeu, and add gijoej.
+...So many more hiscore.dat changes documented in the HiToText thread on BYOAC that I just thought I'd stop here: http://forum.arcadecontrols.com/index.php?topic=83614
+
+New Features:
+New ExternalWrappers meant for "Name" ConversionTypes called PadLeft, and PadRight. They take two parameters, the first is the length you want the byte array to be. The second parameter is the byte to populate with.
+
+-------------------
+Version 2010.9.10
+-------------------
+New Games: Ambush, Angel Kids, Avengers (Fyrecrypts)
+
+Bug Fixes: 
+10yard modified in hiscore.dat, and XML entry to add new clones.
+1943 modified in hiscore.dat, and XML entry to add clone: 1943u, and move 1943kai to it's own entry.
+Fix to legacy driver support. It stopped working on the last release, it's back in!
+
+-------------------
+Version 2010.8.24
+-------------------
+Bug Fixes: 
+Fix to -lp command, it actually works in all known circumstances (so far).
+Fix to version checking of MAME, only used when necessary (so far just Track and Field).
+
+-------------------
+Version 2010.8.16
+-------------------
+New Games: Crash, Orbitron, Sheriff, Water Ski, Logic Pro, The Tin Star, Enigma II, Hexa, Gee Bee, Paradise, Indian Battle, Red Clash, Super Bug, Targ, Spectar, Sasuke vs. Commander, Pisces, Killer Comet, Tank Battalion, Levers, Navarone (bLAZER)
+
+Bug Fixes: 
+Fixed issue with alien3, rank display was incorrectly read as int instead of a hex int.
+tinstar2 added to hiscore.dat (clone of tinstar).
+enigma2a, and enigma2b added to hiscore.dat (clones of enigma2).
+geebeeb added to hiscore.dat (clone of geebee).
+targ and spectar split into separate parents.
+targc added to hiscore.dat (clone of targ).
+panzer, phantom, phantoma, and rallys added to hiscore.dat (clones of spectar).
+piscesb added to hiscore.dat (clone of pisces).
+
+New features:
+Massive speed increases for legacy calls using the command line. It's not quite as fast as legacy drivers were, but the difference is only about 10-50 ms. at most which is usually negligible.
+
+-------------------
+Version 2010.8.9
+-------------------
+New Games:
+Alien3: The Gun, Aliens, Alien Sector, The Alphax Z, Alpine Ski, Soldier Girl Amazon (Fyrecrypts)
+Bio Attack, Dommy, M-79 Ambush, Monte Carlo, Qwak, King & Balloon, Mermaid, The End, Snow Bros. 2 - With New Elves / Otenki Paradise (bLAZER)
+
+Bug Fixes: 
+Fixed duplication of special mapping in Argus.
+hiscore.dat modified to have m660 clones of alphaxz
+hiscore.dat modified to fix amazon.
+Issue with relative path to file not working correctly. It is now.
+
+New features:
+Clone added to alphaxz (m660j).
+Long name clones added to altbeast.
+Clone changes and additions to invaders.
+
+-------------------
+Version 2010.5.12
+-------------------
+New Games:
+Air Duel, Airwolf, Alex Kidd: The Lost Stars (Fyrecrypts)
+
+Bug Fixes: 
+Some fixes to the -lp flag, that should have it work for more (if not all) versions of MAME.
+The -v flag should work correctly now, the standalone version will need a full path to the mame folder.
+Added elevatorb clone to elevator in hiscore.dat
+Moved spcinv95 to the parent rom in hiscore.dat
+
+New features:
+Determine rank functions can now be custom functions that utilize the ConvertByteArrayToString methods and convert to int if no named ConvertByteArrayToInt exists. Essentially, lots of custom ConvertByteArrayToInt functions were being created that just called the ConvertByteArrayToString method, so I went ahead and put in a small routine to automatically do that for me.
+HiToText can now be run in continuous mode. All you do is shell the app, and it will ask for commands. The older functionality still exists so you can pass it command line arguments and it will behave the same.
+Two new flags have been created -h, and -q. -q will exit the application in continuous mode. -h will provide the help menu.
+For those of you compiling HiToText yourself, you will notice there are new environments for testing with debug flags associated with them. This makes testing much easier for me, as well as ensuring releases are already setup correctly. This has no effect on people who don't compile.
+
+-------------------
+Version 2010.5.7
+-------------------
+New Games:
+Athena, Battle of Atlantis, Atomic Point, Aurail, Action Hollywood, A.D. 2083, Action Fighter, Agress, Air Attack, Air Buster: Trouble Specialty Raid Unit (Fyrecrypts)
+
+Bug Fixes: 
+The -l flag now also lists games supported in the XML.
+Fixed the hiscore.dat entry for Action Fighter.
+
+New features:
+Added a new DisplayStructure/FieldName/ConversionType element built in function called TwoToThreeEncoding. It takes one parameter in parenthesis, the number of characters it needs to loop through before it increments the next character. Think of it like binary encoding, there are two values: 0, and 1. If you see a number 2 in decimal, it would be converted to 10 in binary. The same is essentially true for this function, a value of 32 means seeing 0x3981, converts to: 0x14, 0x12, 0x01 (Adding 64 to each byte gets us standard ASCII of: N-L-A). A good example of this can be seen in ad2083 for displaying the high score.
+Added a new SetStructure/FieldName/ConversionType element built in function called TwoToThreeEncoding.  Similarly to above it takes the same parameter as above, but basically reverses the logic to create a 2 byte name from 3 characters.
+Added a new flag "-lp" that lists only the supported parent games. This requires another argument after the flag that is the full path to your mame.exe file (e.g. HiToText -lp "C:\Emulators\mame.exe". This may take a few minutes.
+
+-------------------
+Version 2010.4.28
+-------------------
+New Games:
+APB - All Points Bulletin, Arabian Fight, Anteater, Animalandia Jr., Argus, Ark Area, Armed Formation, Armored Car, Assault (Fyrecrypts)
+
+Bug Fixes: 
+Fixed an issue with dkong3 where setting scores wouldn't set the name field properly.
+Fixed the problem with HiToText crashing if it couldn't find the HiToText.xml file.
+Fixed the missing byte for score 5 in Arabian Fight. (hiscore.dat fix)
+Fixed issue with the SpecialUtilization: IncomingModified affecting all data for every piece of data for that position. Argus is a good example of where this came up, the score is not needing to be adjusted before being updated, however the hi score needs to be divided by 10. Having IncomingModified on the hi score was also affecting the standard score.
+
+New features:
+Added some new functionality for SetStructure/FieldName/ConversionType for CustomName values. It now utilizes the FieldName/Name value which can be used to plug data in the right spot. This is useful for games like APB where the name data is split up among multiple field names.
+Added some new functionality for DisplayStructure/FieldName for Name values. If separated by pipes they will be merged into a single field name before display based on the ConversionType. This is only useful for name fields right now. An example of how to use it can be seen in APB.
+Modified the existing SetStructure/FieldName/ConversionType element built in function called PadData to now be called PadDataReverse. A new PadData has been created that is the reverse of what the old pad data was, but makes more sense to not be called reverse.
+
+-------------------
+Version 2010.2.24
+-------------------
+Bug Fixes: 
+While moving carnival to the XML format, fixed the problem with the score and name being reversed when setting high scores.
+Fixed an issue with games with no rank not being able to be ported to the XML system.
+While moving crush to the XML format, fixed the problem with the score and name being reversed in the data mapping. This should work now.
+While moving ddribble to the XML format, modified the month/day fields to one date field.
+
+New features:
+Added a new DisplayStructure/FieldName optional attribute called CustomName that hooks into the normal Name function, but some games (Nichibutsu games as an example) have some special features that don't work completely with the standard Name functions.
+Added a new Header/Extensions/Name semi-optional attribute called NumberOfBytes that allows you to specify the number of bytes you'll be reading for that file. This is a required attribute if you have more than one extension per entry (i.e. Centipede or Asteroids Deluxe).
+Added some new functionality for SetStructure/FieldName attribute Position where if the fields are separated by pipes it will return data from both of those fields separated by pipes for use in setting this value. This is used mostly for things like checksums, and an example can be found in Asteroids Deluxe.
+Added some new functionality for SetStructure/FieldName attribute ConverstionType where if the field is named CustomName it will utilize a special function for setting data that uses the name function in addition to data. The function called is a custom function that is named as the parent rom name (the top rom in the XML). An example can be found in Asteroids Deluxe.
+Added a new SetStructure/FieldName/ConversionType element built in function called PadData. It takes two parameters in parenthesis, the first is the value the byte should be if the data is the padded value, the second is the first digit of the byte when it's not. A good example of this can be seen in cclimber for setting the high score.
+Games that use the XML format are now labeled as such in the supported games list located here: http://spreadsheets.google.com/pub?key=r1aOWGSATauwVHbhlucsGWQ&output=html
+
+-------------------
+Version 2010.2.10
+-------------------
+New Games:
+Exerion (Fyrecrypts and Cananas)
+
+Bug Fixes: 
+While moving bloodbro to the XML format, fixed the fact that the highest score field wasn't being updated. If writing a score required updating the highest score as well.
+While moving boomrang to the XML format, fixed an issue with the byte mapping, which had an 11th score in the driver, but only 10 scores were saved in the hiscore.dat.
+While moving bzone to the XML format, fixed an issue with the name functions, they did not capture Y or Z correctly.
+
+New features:
+Some additional XML schema information TextParameters has 3 new optional attributes.
+ByteSkipAmount, which will have the text functions use the byte for every ByteSkipAmount. For example, if there are 6 bytes in the name field, however only 3 are used, a ByteSkipAmount value of 2 would use the 1st, 3rd, and 5th, or 2nd, 4th, and 6th bytes for the name function. The default value is 1.
+ByteStart, which will allow the text function to start at a specific byte in the name array. For example, if there are 6 bytes in the name field, however only 3 are used and you wish to start at the 2nd byte, a ByteStart value of 1 would use the name functions on the 2nd, 4th, and 6th bytes. The default value is 0.
+ByteSkipData, which will fill in the bytes that aren't used by the name function. This is only useful if you also use ByteSkipAmount > 1. Some games (batsugun) have specific values that need to be placed in the name bytes to show up correctly in-game. The default value is 0x00. 
+Some reorganization to the code structure, added a few new nested namespaces, moved some things around, etc... Just general cleanup.
+New XML loader using autogenerated classes from an xsd schema. The schema is also included in the source zip. NOTE: This WILL change in the near future, so don't build code around it just yet.
+
+-------------------
+Version 2010.1.28
+-------------------
+Bug Fix: Removed some test code that caused massive failures.
+
+-------------------
+Version 2010.1.26
+-------------------
+New Games:
+Hypersports (Fyrecrypts)
+
+New features:
+New external XML file can be used for creating drivers instead of needing code. Post explaining the new format can be found here: http://forum.arcadecontrols.com/index.php?topic=83614.msg1054003#msg1054003
+The actual offical HiToText.xml file can be found here: http://www.hitotext.com/HiToText/HiToText.xml
+In order to use this file, please put it in the same directory as HiToText.exe
+
+-------------------
+Version 2009.9.16
+-------------------
+New Games:
+Block Out, Break Thru, Cleopatra Fortune, Dazzler, Dead Eye (Meadows), Dyna Gear, Lunar Rescue, Mad Alien, Megadon (Cananas)
+Mighty Monkey, Missile Command, Metal Slug - Super Vehicle-001, Metal Slug 2 - Super Vehicle-001/II, Metal Slug 3, Metal Slug 4 (Cananas) 
+Metal Slug 5, Metal Slug X - Super Vehicle-001, Martial Champion, Michael Jackson's Moonwalker, Naughty Boy, Nemesis (Cananas)
+Nova 2001, Oli-Boo-Chu, Omega Fighter, Q*Bert's Qubes, Star Wars, Streaking, Subroc-3D, Boomer Rang'r, Evil Stone (Cananas)
+Pirates, Red Baron, Sprint 1 (Cananas)
+
+Bug Fixes:
+Fix to Asteroids Deluxe that was introduced when the new coding techniques were used. (Cananas)
+Clones added to 8-Ball Action (Cananas)
+Many changes to hiscore.dat, view the hiscore.dat-astic to see them. (Cananas & Fyrecrypts)
+Beginning transition to MAME 0.134 naming convention for hiscore.dat. Older clones are commented with "; old" (Cananas)
+
+-------------------
+Version 2009.9.1
+-------------------
+New Games: 
+Woodpecker, Naughty Mouse, Journey, Tapper, Timber, Domino, Mortal Kombat 2, Berzerk (Coded by Cananas)
+19xx (Coded by Fyrecrypts)
+
+Bug Fixes: 
+1943 was fixed to display all name characters correctly. (Fyrecrypts)
+Altered Beast sets the alternate ranks correctly now. (Fyrecrypts)
+10 Yard Fight only displays the top 10 scores now, as it is done in-game like this as well. (Fyrecrypts)
+1941 only displays the top 5 scores now, as it is done in-game like this as well. (Fyrecrypts)
+
+New features:
+Drivers starting with # or A have been modified to use a more generic set of methods that reduces the amount of code used. This will also reduce the time it takes to add new drivers. (Fyrecrypts)
+Certain drivers now inherit parent drivers that are similiar, but cannot be contained in that driver because the file is setup differently, or it is a separate game (i.e. Tapper and Timber have Journey as their parent.) (Cananas)
+Drivers starting with # or A have new functionality to allow the modification of current score's names. If you mess up an initial, you can now just modify it! Use -m <romname> <rank> <name> to replace the name. NOTE: This is not implemented fully yet, only #-A will work.
+
+-------------------
+Version 2009.8.5
+-------------------
+New Games: Barrier, Batsugun, Battlecry, Chase H.Q., Demon, Pengo, QB-3, Solar Quest, Sundance, War of the Worlds (Coded by Cananas)
+
+-------------------
+Version 2009.8.4
+-------------------
+New Games:
+Narc, U.N. Squadron/Area 88 (Coded by RoadRunn)
+Ajax, Q*Bert, Mortal Kombat, Armor Attack, Boxing Bugs, Rip Off, Speed Freak, Star Castle, Tailgunner (Coded by Cananas)
+
+Bug fixes:
+Mappy was fixed so that the top hi score code would display correctly in-game. (Fyrecrypts)
+Marble madness was also fixed to work correctly when writing scores. (Fyrecrypts)
+Crazy Kong had some minor tweaks to work correctly with blank spaces in the name fields. (Fyrecrypts)
+Games using the cinemat.c driver were fixed to work with hiscore.dat again, you need MKChamp's hiscore patch from 0.133 or later to use (Cananas/MKChamp)
+
+New features:
+Erase feature which will erase all scores from that game's .hi file. This makes it much easier to replace scores when the scores you want to replace are less than existing scores. (RoadRunn)
+
+-------------------
+Version 2009.7.14
+-------------------
+New Games:
+Joust, Joust2, River Patrol, Crazy Rally, Head On, Head On 2 (Coded by Cananas)
+Tron, Discs of Tron (Coded by Zallax)
+Pooyan, Cabal, Toki (Coded by Fyrecrypts)
+
+Bug fixes:
+1942 got a major overhaul to bring it inline with current games, i.e. work correctly when writing scores. (Fyrecrypts)
+Added clones ark1ball, amidars, bzonec and swimmerb in hiscore.dat. (Cananas)
+swimmerb is also added to hitotext. (Cananas)
+Added riverpatrol (rpatrol) and clones (also the deleted rpatrolo) to hiscore.dat. (Cananas)
+Fixed a little bug in robotron. (Cananas)
+exprrada now works correctly. (Fyrecrypts)
+kangaroo fixed by adding dna disturber's change in hiscore.dat

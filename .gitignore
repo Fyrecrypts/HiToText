@@ -1,0 +1,16 @@
+/bin
+/obj
+
+/_svn
+/Games/_svn
+/Generic/_svn
+/HXML/_svn
+
+/Properties/_svn
+/Utils/_svn
+
+/Games/Obsoleted/_svn
+/Games/Alternate/_svn
+/Games/Unused/_svn
+
+/*.suo
